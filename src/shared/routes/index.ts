@@ -1,9 +1,9 @@
 import { Router } from "express";
-import productRouter from "@modules/products/routes/product.routes"
+import vulnerabilitiesRouter from "@modules/vulnerabilities/routes/vulnerability.routes"
 
 const routes = Router();
 
-routes.use('/products', productRouter)
+routes.use('/vulnerabilities', vulnerabilitiesRouter)
 routes.get('/', (request, response) => {
     response.json({ message: 'Api de CVE' });
     return;

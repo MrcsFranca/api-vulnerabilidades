@@ -1,6 +1,7 @@
+import "reflect-metadata";
 import { DataSource } from "typeorm";
 import path from "path";
-import Product from "@modules/products/typeorm/entities/Product"
+import Vulnerability from "@modules/vulnerabilities/typeorm/entities/Vulnerability";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -11,6 +12,6 @@ export const AppDataSource = new DataSource({
     database: "apivulns",
     synchronize: false,
     logging: true,
-    entities: [Product],
+    entities: [Vulnerability],
     migrations: [path.join("src", "shared", "typeorm", "migrations", "*.ts")]
 });
